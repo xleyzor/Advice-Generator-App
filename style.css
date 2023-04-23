@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green:hsl(150, 100%, 66%);
+    --Grayish-Blue:hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue:hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);   
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+::selection {
+    color: none;
+    background: none;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--Dark-Blue);
+}
+
+.wrapper {
+    max-width: 550px;
+    padding: 2.3rem;
+    text-align: center;
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.wrapper h5 {
+    color: var(--Neon-Green);
+    letter-spacing: 3.5px;
+    margin-top: 20px;
+}
+
+.wrapper .text {
+    word-wrap: break-word;
+    color: var(--Light-Cyan);
+    font-size: 28px;
+    margin: 2rem 0;
+}
+
+.wrapper .pattern-divider {
+    margin-bottom: 40px;
+}
+
+.wrapper .dice {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--Neon-Green);
+    display: inline-flex;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.wrapper .dice:hover {
+    box-shadow: 0px 0px 20px 20px hsl(150, 100%, 66%, .2);
+}
+
+.pattern-divider-desktop {
+    display: block;
+}
+
+.pattern-divider-mobile {
+    display: none;
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+
+@media (max-width: 400px) {
+
+    .pattern-divider-desktop {
+        display: none;
+    }
+
+    .pattern-divider-mobile {
+        display: block;
+    }
+
+    .wrapper {
+        max-width: 350px;
+    }
+
+    .wrapper .text {
+        font-size: 24px;
+        letter-spacing: -1px;
+    }
+
+}
